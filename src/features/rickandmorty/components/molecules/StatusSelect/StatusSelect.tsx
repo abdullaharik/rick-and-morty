@@ -8,6 +8,7 @@ interface StatusSelectProps {
 }
 
 const statusOptions = [
+  { value: 'all', label: 'All' },
   { value: 'alive', label: 'Alive' },
   { value: 'dead', label: 'Dead' },
   { value: 'unknown', label: 'Unknown' },
