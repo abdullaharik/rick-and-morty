@@ -5,12 +5,10 @@ export const characterFilterSchema = z.object({
   name: z.string().optional(),
   species: z.string().optional(),
   type: z.string().optional(),
-  status: z.enum(['alive', 'dead', 'unknown']).optional().default('unknown'),
-  gender: z
-    .enum(['female', 'male', 'genderless', 'unknown'])
-    .optional()
-    .default('unknown'),
+  status: z.enum(['all', 'alive', 'dead', 'unknown']).optional(),
+  gender: z.enum(['all', 'female', 'male', 'genderless', 'unknown']).optional(),
 });
+
 export type CharacterFilter = z.infer<typeof characterFilterSchema>;
 
 const LocationSchema = z.object({
