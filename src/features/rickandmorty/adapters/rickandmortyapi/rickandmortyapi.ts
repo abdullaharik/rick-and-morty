@@ -13,6 +13,18 @@ export async function fetchFilteredCharacters(
 ): Promise<Character[]> {
   const validatedFilter = characterFilterSchema.safeParse(filter);
 
+  if (!validatedFilter.success) {
+    throw new Error('Invalid filter');
+  }
+
+  if (validatedFilter.data.status === 'all') {
+    delete validatedFilter.data.status;
+  }
+
+  if (validatedFilter.data.gender === 'all') {
+    delete validatedFilter.data.gender;
+  }
+
   const queryParams = new URLSearchParams(
     validatedFilter.data as unknown as Record<string, string>
   ).toString();
