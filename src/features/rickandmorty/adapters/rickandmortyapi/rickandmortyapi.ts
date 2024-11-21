@@ -11,9 +11,10 @@ const API_URL = 'https://rickandmortyapi.com/api';
 export async function fetchFilteredCharacters(
   filter: Partial<CharacterFilter>
 ): Promise<Character[]> {
-  const validatedFilter = characterFilterSchema.parse(filter);
+  const validatedFilter = characterFilterSchema.safeParse(filter);
+
   const queryParams = new URLSearchParams(
-    validatedFilter as unknown as Record<string, string>
+    validatedFilter.data as unknown as Record<string, string>
   ).toString();
   const response = await fetch(`${API_URL}/character/?${queryParams}`);
 
