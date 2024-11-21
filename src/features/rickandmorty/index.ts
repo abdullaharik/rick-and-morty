@@ -1,0 +1,1 @@
+export { RickAndMortyPage } from './components';
