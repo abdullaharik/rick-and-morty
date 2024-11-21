@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 interface SelectProps {
   options: { value: string; label: string }[];
@@ -7,16 +7,14 @@ interface SelectProps {
 }
 
 const Select: React.FC<SelectProps> = ({ options, onChange, defaultValue }) => {
-  const [selectedValue, setSelectedValue] = useState(defaultValue || '');
-
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const value = event.target.value;
-    setSelectedValue(value);
+
     onChange(value);
   };
 
   return (
-    <select value={selectedValue} onChange={handleChange}>
+    <select value={defaultValue} onChange={handleChange}>
       {options.map((option) => (
         <option key={option.value} value={option.value}>
           {option.label}
