@@ -1,1 +1,1 @@
-export { RickAndMortyPage } from './components';
+export { RickAndMortyPageContainer } from './components';
