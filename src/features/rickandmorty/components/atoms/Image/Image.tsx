@@ -12,8 +12,8 @@ interface ImageProps {
 export const Image: React.FC<ImageProps> = ({
   src,
   alt,
-  width,
-  height,
+  width = 100,
+  height = 100,
   className,
 }) => {
   return (
