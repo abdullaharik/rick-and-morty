@@ -8,6 +8,7 @@ interface GenderSelectProps {
 }
 
 const genderOptions = [
+  { value: 'all', label: 'All' },
   { value: 'female', label: 'Female' },
   { value: 'male', label: 'Male' },
   { value: 'genderless', label: 'Genderless' },
