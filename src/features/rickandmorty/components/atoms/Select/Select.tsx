@@ -14,7 +14,11 @@ const Select: React.FC<SelectProps> = ({ options, onChange, defaultValue }) => {
   };
 
   return (
-    <select value={defaultValue} onChange={handleChange}>
+    <select
+      value={defaultValue}
+      onChange={handleChange}
+      className='border-none outline-none focus:ring-0'
+    >
       {options.map((option) => (
         <option key={option.value} value={option.value}>
           {option.label}
