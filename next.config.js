@@ -4,6 +4,10 @@ const nextConfig = {
     dirs: ['src'],
   },
 
+  images: {
+    domains: ['rickandmortyapi.com'],
+  },
+
   reactStrictMode: true,
   swcMinify: true,
 
