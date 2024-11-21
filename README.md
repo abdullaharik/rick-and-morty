@@ -1,3 +1,5 @@
+# TEST URL: http://localhost:3000/male/dead
+
 # Next.js + Tailwind CSS + TypeScript Starter and Boilerplate
 
 <div align="center">
