@@ -6,12 +6,10 @@ const useUpdateUrl = () => {
   const router = useRouter();
 
   const updateUrl = (params: { status?: string; gender?: string }) => {
-    const { status = 'all', gender = 'all' } = params;
+    const { status, gender } = params;
 
-    // Construct the new path based on the provided parameters
     const newPath = `${gender}/${status}`;
 
-    // Update the URL with the new path
     router.push(`/${newPath}`);
   };
 
