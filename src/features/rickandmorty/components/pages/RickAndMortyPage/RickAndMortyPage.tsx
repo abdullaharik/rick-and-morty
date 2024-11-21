@@ -14,18 +14,13 @@ export const RickAndMortyPage = ({
 
   const { updateUrl } = useUpdateUrl();
 
-  const handleGenderChange = (gender: CharacterFilter['gender']) => {
-    updateUrl({ gender });
-  };
-
-  const handleStatusChange = (status: CharacterFilter['status']) => {
-    updateUrl({ status });
-  };
+  const handleUrl = (key: string) => (value: string) =>
+    updateUrl({ ...params, [key]: value });
 
   return (
     <div>
-      <GenderSelect onChange={handleGenderChange} defaultValue={gender} />
-      <StatusSelect onChange={handleStatusChange} defaultValue={status} />
+      <GenderSelect onChange={handleUrl('gender')} defaultValue={gender} />
+      <StatusSelect onChange={handleUrl('status')} defaultValue={status} />
       <h1>
         Gender:{gender} / Status: {status}
       </h1>
